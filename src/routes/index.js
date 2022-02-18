@@ -1,12 +1,14 @@
 const { Router } = require('express')
 
+const UserController = require('../controllers/UserController')
+
 const routes = Router()
 
 routes.get('/', (req, res) => {
   res.send('Olá Mundo')
 })
 
-routes.post('/users')
+routes.post('/users', UserController.createUser)
 routes.get('/users')
 
 routes.get('/users/:user_id')
